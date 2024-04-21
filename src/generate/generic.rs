@@ -98,7 +98,7 @@ pub trait Resettable: RegisterSpec {
 /// This structure provides volatile access to registers.
 #[repr(transparent)]
 pub struct Reg<REG: RegisterSpec> {
-    register: vcell::VolatileCell<REG::Ux>,
+    register: cortex_m::vtypes::VolatileCell<REG::Ux>,
     _marker: marker::PhantomData<REG>,
 }
 
